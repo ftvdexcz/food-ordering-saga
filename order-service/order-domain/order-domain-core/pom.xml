@@ -9,8 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>order-doma
-        in-core</artifactId>
+    <artifactId>order-domain-core</artifactId>
 
     <properties>
 
