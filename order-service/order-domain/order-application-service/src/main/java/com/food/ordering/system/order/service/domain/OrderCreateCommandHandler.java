@@ -51,7 +51,7 @@ public class OrderCreateCommandHandler {
         OrderCreatedEvent orderCreatedEvent = orderDomainService.validateAndInitiateOrder(order, restaurant);
         Order orderResult = saveOrder(order);
         log.info("Order is created with id: {}", orderResult.getId().getValue());
-        return orderDataMapper.orderToCreateOrderResponse(orderResult);
+        return orderDataMapper.orderToCreateOrderResponse(orderResult, "Create order successfully");
     }
 
     private Restaurant checkRestaurant(CreateOrderCommand createOrderCommand) {
@@ -74,7 +74,7 @@ public class OrderCreateCommandHandler {
     }
 
     private Order saveOrder(Order order){
-        Order orderResult =  orderRepository.save(order);
+        Order orderResult = orderRepository.save(order);
         if(orderResult == null){
             log.error("Could not save order!");
             throw new OrderDomainException("Could not save order!");

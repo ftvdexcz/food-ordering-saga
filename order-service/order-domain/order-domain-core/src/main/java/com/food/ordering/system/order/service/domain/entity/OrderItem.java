@@ -6,9 +6,13 @@ import com.food.ordering.system.domain.valo.OrderId;
 import com.food.ordering.system.order.service.domain.valo.OrderItemId;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@Data
-@Builder
+@Getter
+@Setter
+@SuperBuilder
 public class OrderItem extends BaseEntity<OrderItemId> {
     private OrderId orderId;
     private final Product product;

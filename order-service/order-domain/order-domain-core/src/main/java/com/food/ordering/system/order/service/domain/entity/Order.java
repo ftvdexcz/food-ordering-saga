@@ -6,14 +6,16 @@ import com.food.ordering.system.order.service.domain.exception.OrderDomainExcept
 import com.food.ordering.system.order.service.domain.valo.OrderItemId;
 import com.food.ordering.system.order.service.domain.valo.StreetAddress;
 import com.food.ordering.system.order.service.domain.valo.TrackingId;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 import java.util.UUID;
 
-@Data
-@Builder
+@Getter
+@Setter
+@SuperBuilder
+@AllArgsConstructor
 public class Order extends AggregateRoot<OrderId> {
     private final CustomerId customerId;
     private final RestaurantId restaurantId;
