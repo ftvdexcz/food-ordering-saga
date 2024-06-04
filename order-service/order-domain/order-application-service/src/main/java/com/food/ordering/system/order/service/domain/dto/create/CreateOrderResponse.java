@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter
 @Builder
 @AllArgsConstructor
-public class CreateOderResponse {
+public class CreateOrderResponse {
     @NotNull
     private final UUID orderTrackingId;
 
