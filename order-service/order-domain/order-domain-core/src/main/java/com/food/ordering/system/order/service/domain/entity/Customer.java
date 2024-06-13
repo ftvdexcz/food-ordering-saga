@@ -10,5 +10,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public class Customer extends AggregateRoot<CustomerId> {
-
+    public Customer(CustomerId customerId){
+        super.setId(customerId);
+    }
 }
