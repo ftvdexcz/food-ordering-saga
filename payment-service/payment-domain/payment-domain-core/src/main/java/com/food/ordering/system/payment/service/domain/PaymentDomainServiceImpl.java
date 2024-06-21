@@ -42,7 +42,6 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
         }
     }
 
-
     @Override
     public PaymentEvent validateAndCancelPayment(Payment payment, CreditEntry creditEntry, List<CreditHistory> creditHistories, List<String> failureMessages) {
         payment.validatePayment(failureMessages);

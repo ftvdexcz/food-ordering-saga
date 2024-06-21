@@ -16,6 +16,8 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.UUID;
 
+import static com.food.ordering.system.domain.DomainConstants.UTC;
+
 @Getter
 @Setter
 @SuperBuilder
@@ -30,7 +32,7 @@ public class Payment extends AggregateRoot<PaymentId> {
 
     public void initializePayment(){
         setId(new PaymentId(UUID.randomUUID()));
-        createdAt= ZonedDateTime.now(ZoneId.of("UTC"));
+        createdAt = ZonedDateTime.now(ZoneId.of(UTC));
     }
 
     public void validatePayment(List<String> failureMessages) {
